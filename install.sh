@@ -898,3 +898,24 @@ install_all() {
         success "Skill '${SKILL_NAME}' installed to ${installed_count} platform(s)."
     fi
 }
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+main() {
+    printf "${BOLD}Installing skill: ${SKILL_NAME}${NC}\n"
+    printf "%-40s\n" "----------------------------------------"
+
+    parse_args "$@"
+    validate_skill_md
+
+    if $INSTALL_ALL; then
+        install_all
+    else
+        install_single
+    fi
+
+    exit 0
+}
+
+main "$@"
