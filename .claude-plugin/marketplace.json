@@ -1,0 +1,14 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "get-more-perspectives-skill",
+  "owner": {
+    "name": "Antigravity Agent Skill Factory"
+  },
+  "plugins": [
+    {
+      "name": "get-more-perspectives-skill",
+      "source": "./",
+      "description": "Assemble a virtual advisory board of diverse expert personas (Operator, Skeptic, Visionary, Customer Advocate, Quant) to analyze critical decisions, uncover blindspots, and provide actionable recommendations."
+    }
+  ]
+}

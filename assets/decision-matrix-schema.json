@@ -1,0 +1,106 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DecisionPerspectiveSynthesis",
+  "description": "Schema for multi-perspective advisory board synthesis output",
+  "type": "object",
+  "required": [
+    "decision_topic",
+    "decision_type",
+    "advisory_board",
+    "perspectives",
+    "synthesis",
+    "actionable_recommendations"
+  ],
+  "properties": {
+    "decision_topic": {
+      "type": "string",
+      "description": "Core dilemma or decision statement being analyzed"
+    },
+    "decision_type": {
+      "type": "string",
+      "enum": ["one_way_door", "two_way_door", "mixed"],
+      "description": "Reversibility classification (Jeff Bezos Type 1 vs Type 2)"
+    },
+    "advisory_board": {
+      "type": "array",
+      "description": "List of assembled advisors",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "focus"],
+        "properties": {
+          "id": {"type": "string"},
+          "name": {"type": "string"},
+          "focus": {"type": "string"}
+        }
+      }
+    },
+    "perspectives": {
+      "type": "array",
+      "description": "Independent assessments from each advisor",
+      "items": {
+        "type": "object",
+        "required": ["advisor_id", "stance", "core_insights", "key_risks", "critical_questions"],
+        "properties": {
+          "advisor_id": {"type": "string"},
+          "stance": {
+            "type": "string",
+            "enum": ["strongly_support", "support_with_conditions", "neutral_exploratory", "cautious_oppose", "strongly_oppose"]
+          },
+          "core_insights": {
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          "key_risks": {
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          "critical_questions": {
+            "type": "array",
+            "items": {"type": "string"}
+          }
+        }
+      }
+    },
+    "synthesis": {
+      "type": "object",
+      "required": ["consensus_points", "tension_points", "blindspots_revealed"],
+      "properties": {
+        "consensus_points": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "tension_points": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "topic": {"type": "string"},
+              "side_a": {"type": "string"},
+              "side_b": {"type": "string"},
+              "tradeoff_nature": {"type": "string"}
+            }
+          }
+        },
+        "blindspots_revealed": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "actionable_recommendations": {
+      "type": "object",
+      "required": ["recommended_direction", "immediate_experiments", "kill_criteria"],
+      "properties": {
+        "recommended_direction": {"type": "string"},
+        "immediate_experiments": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "kill_criteria": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "default_advisors": [
+    {
+      "id": "operator",
+      "name": "执行者 (The Operator)",
+      "archetype": "COO / Engineering Director / Implementation Lead",
+      "focus": "落地执行、操作可行性、资源瓶颈、时间线与交付摩擦",
+      "core_question": "这在现实中如何一步一步落地？最大的操作摩擦和执行瓶颈在哪里？",
+      "evaluation_lens": [
+        "执行路径是否清晰具体，是否有可量化的阶段里程碑？",
+        "团队资源、技能带宽和时间预算是否充足？",
+        "依赖项是否过多？是否存在单点故障？",
+        "第一天、第一周需要做的具体动作是什么？"
+      ],
+      "tags": ["execution", "operations", "timeline", "feasibility", "bandwidth"]
+    },
+    {
+      "id": "skeptic",
+      "name": "质疑者 (The Skeptic / Devil's Advocate)",
+      "archetype": "Risk Officer / Red Teamer / Critical Inquirer",
+      "focus": "风险盲区、假设证伪、最坏情况 (Worst-Case)、潜在漏洞与事前验尸 (Pre-Mortem)",
+      "core_question": "如果这个决定在 6 个月后彻底失败，最可能的原因是什么？哪些隐含假设是未经检验的？",
+      "evaluation_lens": [
+        "方案中存在哪些过度乐观的假设？",
+        "最坏情况（下行风险）是什么？能否承受？",
+        "是否存在不可逆的损失（单向门决策）？",
+        "是否有明确的止损红线与回滚策略？"
+      ],
+      "tags": ["risk", "pre-mortem", "downside", "blindspots", "assumptions"]
+    },
+    {
+      "id": "visionary",
+      "name": "远见者 (The Visionary)",
+      "archetype": "Chief Strategist / Futurist / Venture Capitalist",
+      "focus": "长期战略、上行不对称性、创新杠杆、二阶效应与未来趋势",
+      "core_question": "这个决定的 3-5 年长期复利是什么？是否存在高不对称性的百倍上行机会？",
+      "evaluation_lens": [
+        "是否具备战略飞轮效应和长期竞争壁垒？",
+        "在更大尺度的时代/行业趋势中处于什么位置？",
+        "是否存在二阶、三阶积极衍生效应？",
+        "是否过于保守而错失了更大的战略格局？"
+      ],
+      "tags": ["strategy", "vision", "upside", "leverage", "second-order"]
+    },
+    {
+      "id": "customer_advocate",
+      "name": "客户代言人 (The Customer Advocate)",
+      "archetype": "Head of Product / UX Researcher / Community Voice",
+      "focus": "最终用户价值、心理感知、信任建立、使用阻力与真实痛点",
+      "core_question": "最终受众/客户真正关心什么？这究竟是解决了真实痛点，还是自嗨？",
+      "evaluation_lens": [
+        "对核心受众的即时体验与长期信任有何影响？",
+        "用户从接触到获得价值的学习成本/认知负荷有多大？",
+        "决策是否真正提升了净推荐值 (NPS) 或用户留存？",
+        "是否牺牲了用户体验来换取短期指标？"
+      ],
+      "tags": ["user-experience", "customer-value", "trust", "psychology", "friction"]
+    },
+    {
+      "id": "quant",
+      "name": "财务与数据专家 (The Quant / Finance Specialist)",
+      "archetype": "CFO / Data Scientist / Unit Economics Analyst",
+      "focus": "商业回报、机会成本、单位经济模型、量化数据支撑与 ROI",
+      "core_question": "数字指标和经济模型是否成立？资金/时间的机会成本是多少？",
+      "evaluation_lens": [
+        "投入产出比 (ROI)、回收周期 (Payback Period) 与盈亏平衡点如何？",
+        "做出该选择所放弃的最佳替代方案（机会成本）是什么？",
+        "关键指标是否有基线数据与明确的度量归因方式？",
+        "边际收益递减点在哪里？"
+      ],
+      "tags": ["finance", "roi", "unit-economics", "opportunity-cost", "metrics"]
+    }
+  ],
+  "specialized_advisors": [
+    {
+      "id": "tech_architect",
+      "name": "技术架构师 (The Architect)",
+      "archetype": "Chief Architect / Staff Engineer",
+      "focus": "技术债务、可扩展性、系统解耦与演进复杂度",
+      "core_question": "技术选型在 2 年后会成为资产还是沉重包袱？扩展瓶颈在哪里？",
+      "tags": ["technology", "architecture", "scalability", "tech-debt"]
+    },
+    {
+      "id": "legal_ethicist",
+      "name": "合规与伦理顾问 (The Guardian)",
+      "archetype": "General Counsel / Ethics Officer",
+      "focus": "法律法规、数据合规、道德声誉与潜在诉讼风险",
+      "core_question": "在最严苛的监管与公众审视下，该决策是否存在法律与伦理隐患？",
+      "tags": ["legal", "compliance", "ethics", "reputation"]
+    },
+    {
+      "id": "simplifier",
+      "name": "极简主义者 (The Simplifier)",
+      "archetype": "Product Minimalist / Occam's Razor Practitioner",
+      "focus": "奥卡姆剃刀、减法设计、消除冗余、80/20核心法则",
+      "core_question": "如果不做这个复杂的方案，最简单的 20% 核心动作能否达到 80% 效果？",
+      "tags": ["simplicity", "minimalism", "pareto", "efficiency"]
+    },
+    {
+      "id": "talent_culture",
+      "name": "组织与文化顾问 (The Culture Champion)",
+      "archetype": "Chief People Officer / Organizational Psychologist",
+      "focus": "团队士气、组织文化对齐、人员流动风险与心理安全感",
+      "core_question": "这个决定将如何改变团队的日常氛围与组织心智？",
+      "tags": ["culture", "team", "morale", "organization"]
+    }
+  ]
+}
