@@ -591,7 +591,7 @@ install_universal_secondary() {
 # ---------------------------------------------------------------------------
 install_files() {
     # Collect the list of files to install.
-    # We copy everything in SCRIPT_DIR except the install script itself.
+    # We copy everything in SCRIPT_DIR except the installer and Git metadata.
     file_count=0
     install_script_name="$(basename "$0")"
 
@@ -610,7 +610,9 @@ install_files() {
         for file in "${SCRIPT_DIR}"/.*; do
             [ -e "$file" ] || continue
             fname="$(basename "$file")"
-            if [ "$fname" = "." ] || [ "$fname" = ".." ]; then continue; fi
+            case "$fname" in
+                .|..|.git) continue ;;
+            esac
             info "Would copy: ${fname}"
             file_count=$((file_count + 1))
         done
@@ -649,7 +651,9 @@ install_files() {
     for file in "${SCRIPT_DIR}"/.*; do
         [ -e "$file" ] || continue
         fname="$(basename "$file")"
-        [ "$fname" = "." ] || [ "$fname" = ".." ] && continue
+        case "$fname" in
+            .|..|.git) continue ;;
+        esac
 
         if ! cp -R "$file" "${INSTALL_DIR}/" 2>/dev/null; then
             error "Failed to copy ${fname} to ${INSTALL_DIR}/"
@@ -894,24 +898,3 @@ install_all() {
         success "Skill '${SKILL_NAME}' installed to ${installed_count} platform(s)."
     fi
 }
-
-# ---------------------------------------------------------------------------
-# Main
-# ---------------------------------------------------------------------------
-main() {
-    printf "${BOLD}Installing skill: ${SKILL_NAME}${NC}\n"
-    printf "%-40s\n" "----------------------------------------"
-
-    parse_args "$@"
-    validate_skill_md
-
-    if $INSTALL_ALL; then
-        install_all
-    else
-        install_single
-    fi
-
-    exit 0
-}
-
-main "$@"
