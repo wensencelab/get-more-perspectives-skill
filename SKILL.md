@@ -10,13 +10,13 @@ description: >-
 license: MIT
 activation: /get-more-perspectives
 metadata:
-  author: Antigravity Agent Skill Factory
+  author: 文森策
   version: 1.1.0
   created: 2026-08-16
   last_reviewed: 2026-08-26
   review_interval_days: 90
 provenance:
-  maintainer: Antigravity Agent Skill Factory
+  maintainer: 文森策
   version: 1.1.0
   created: 2026-08-16
   source_references:

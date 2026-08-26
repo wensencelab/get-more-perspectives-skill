@@ -2,7 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "get-more-perspectives-skill",
   "owner": {
-    "name": "Antigravity Agent Skill Factory"
+    "name": "文森策"
   },
   "plugins": [
     {
