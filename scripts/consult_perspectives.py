@@ -44,68 +44,76 @@ def load_personas_data() -> Dict[str, Any]:
             {
                 "id": "operator",
                 "name": "执行者 (The Operator)",
-                "archetype": "COO / Engineering Director",
-                "focus": "落地执行、操作可行性、资源瓶颈、时间线与交付摩擦",
-                "core_question": "这在现实中如何一步一步落地？最大的操作摩擦和执行瓶颈在哪里？",
-                "tags": ["execution", "operations", "timeline", "feasibility"]
+                "archetype": "COO / 交付总监 / 运营负责人",
+                "focus": "落地执行、团队带宽、排期摩擦与具体第一步",
+                "core_question": "想法很美好，但到底谁来干？第一周具体做什么？最容易卡在哪里？",
+                "tags": ["execution", "operations", "timeline", "feasibility", "bandwidth"]
             },
             {
                 "id": "skeptic",
-                "name": "质疑者 (The Skeptic / Devil's Advocate)",
-                "archetype": "Risk Officer / Red Teamer",
-                "focus": "风险盲区、假设证伪、最坏情况 (Worst-Case) 与事前验尸 (Pre-Mortem)",
-                "core_question": "如果这个决定在 6 个月后彻底失败，最可能的原因是什么？",
-                "tags": ["risk", "pre-mortem", "downside", "blindspots"]
+                "name": "质疑者 (The Skeptic / 首席杠精)",
+                "archetype": "首席风控官 / 红队排雷专家 / 清醒观察者",
+                "focus": "风险盲区、假设证伪、最坏情况与事前失败推演 (Pre-Mortem 逆向排雷)",
+                "core_question": "假设这个决定在 6 个月后在落地中彻底搞砸了，最主要的踩坑原因会是什么？哪些默认前提是站不住脚的？",
+                "tags": ["risk", "pre-mortem", "downside", "blindspots", "assumptions"]
             },
             {
                 "id": "visionary",
                 "name": "远见者 (The Visionary)",
-                "archetype": "Chief Strategist / Futurist",
-                "focus": "长期战略、上行不对称性、创新杠杆、二阶效应与未来趋势",
-                "core_question": "这个决定的 3-5 年长期复利是什么？是否存在百倍上行机会？",
-                "tags": ["strategy", "vision", "upside", "leverage"]
+                "archetype": "战略顾问 / 科技趋势洞察者 / 早期投资人",
+                "focus": "长期复利、非对称上行机会、战略杠杆与时代趋势",
+                "core_question": "这个决定的 3-5 年长期复利是什么？这步棋能否撬动更大的长远壁垒？",
+                "tags": ["strategy", "vision", "upside", "leverage", "second-order"]
             },
             {
                 "id": "customer_advocate",
-                "name": "客户代言人 (The Customer Advocate)",
-                "archetype": "Head of Product / UX Researcher",
-                "focus": "最终用户价值、心理感知、信任建立、使用阻力与真实痛点",
-                "core_question": "最终受众/客户真正关心什么？这是解决了真实痛点还是自嗨？",
-                "tags": ["user-experience", "customer-value", "trust", "psychology"]
+                "name": "客户代言人 (The Customer Voice)",
+                "archetype": "产品总监 / 用户研究专家 / 品牌口碑主理人",
+                "focus": "真实用户痛点、心理感知、信任建立与使用阻力",
+                "core_question": "用户真正关心什么？这到底解决了真实痛点，还是我们在自我感动？",
+                "tags": ["user-experience", "customer-value", "trust", "psychology", "friction"]
             },
             {
                 "id": "quant",
-                "name": "财务与数据专家 (The Quant / Finance Specialist)",
-                "archetype": "CFO / Data Scientist",
-                "focus": "商业回报、机会成本、单位经济模型、量化数据支撑与 ROI",
-                "core_question": "数字指标和经济模型是否成立？资金/时间的机会成本是多少？",
-                "tags": ["finance", "roi", "unit-economics", "opportunity-cost"]
+                "name": "财务与数据专家 (The Quant)",
+                "archetype": "精明 CFO / 商业算账高手 / 数据分析专家",
+                "focus": "商业真账、投入产出比 (ROI)、现金流安全与机会成本",
+                "core_question": "算上所有隐性人力和时间，这门账到底能不能算过来？机会成本是多少？",
+                "tags": ["finance", "roi", "unit-economics", "opportunity-cost", "metrics"]
             }
         ],
         "specialized_advisors": [
             {
                 "id": "tech_architect",
                 "name": "技术架构师 (The Architect)",
-                "archetype": "Chief Architect / Staff Engineer",
-                "focus": "技术债务、可扩展性、系统解耦与演进复杂度",
-                "core_question": "技术选型在 2 年后会成为资产还是沉重包袱？",
-                "tags": ["technology", "architecture", "scalability"]
+                "archetype": "资深架构师 / 技术专家",
+                "focus": "技术债务、系统解耦、可维护性与架构演进",
+                "core_question": "这项技术选型在 2 年后会成为资产还是沉重包袱？扩展瓶颈在哪里？",
+                "tags": ["technology", "architecture", "scalability", "tech-debt"]
             },
             {
                 "id": "legal_ethicist",
-                "name": "合规与伦理顾问 (The Guardian)",
-                "archetype": "General Counsel / Ethics Officer",
-                "focus": "法律法规、数据合规、道德声誉与潜在诉讼风险",
-                "core_question": "该决策是否存在合规与伦理隐患？",
-                "tags": ["legal", "compliance", "ethics"]
+                "name": "合规与法务顾问 (The Guardian)",
+                "archetype": "法务总监 / 数据合规官",
+                "focus": "监管政策、数据安全、知识产权与合规风险",
+                "core_question": "在监管与公众审视下，该决策是否存在法律隐患或声誉风险？",
+                "tags": ["legal", "compliance", "ethics", "reputation"]
             },
             {
                 "id": "simplifier",
                 "name": "极简主义者 (The Simplifier)",
-                "archetype": "Product Minimalist / Occam's Razor",
-                "focus": "奥卡姆剃刀、减法设计、消除冗余、80/20核心法则",
-                "core_question": "最简单的 20% 核心动作能否达到 80% 效果？",
-                "tags": ["simplicity", "minimalism", "pareto"]
+                "archetype": "极简产品人 / 奥卡姆剃刀践行者",
+                "focus": "减法思维、剔除冗余、80/20 核心聚焦",
+                "core_question": "如果不做这个复杂的方案，用最简单的 20% 动作能否解决 80% 的问题？",
+                "tags": ["simplicity", "minimalism", "pareto", "efficiency"]
+            },
+            {
+                "id": "talent_culture",
+                "name": "组织文化顾问 (The People Lead)",
+                "archetype": "人力负责人 / 组织心理学者",
+                "focus": "团队士气、内部阻力、人员流动与心理安全感",
+                "core_question": "这个决定将如何影响团队士气与日常工作氛围？大家会产生抵触吗？",
+                "tags": ["culture", "team", "morale", "organization"]
             }
         ]
     }
@@ -168,7 +176,7 @@ def classify_decision_type(topic: str) -> Tuple[str, str]:
     topic_lower = topic.lower()
     irreversible_cues = ["quit", "resign", "sell", "acquire", "pivot", "shutdown", "rewrite", "离职", "出售", "收购", "推倒重写", "彻底转型"]
     if any(cue in topic_lower for cue in irreversible_cues):
-        return ("单向门决策 (Type 1 - 不可逆/高撤销成本)", "建议以【质疑者】事前验尸与【财务专家】底线破产核算为主，严控致命下行风险。")
+        return ("单向门决策 (Type 1 - 不可逆/高撤销成本)", "建议以【质疑者】事前失败推演 (Pre-Mortem 逆向排雷) 与【财务专家】底线风控核算为主，严控致命下行风险。")
     return ("双向门决策 (Type 2 - 可逆/低试错成本)", "建议以【执行者】与【远见者】为主，聚焦 72 小时最小可行验证，小步快跑。")
 
 
@@ -212,7 +220,7 @@ def generate_markdown_report(
             lines.append("  2. **资源与带宽瓶颈**：需评估团队当前负荷，明确新增该事项后哪些既有需求需降级或延期。")
             lines.append("- **操作警示**：若缺乏明确的责任人 (DRI) 与日度交付看板，执行摩擦将迅速吞噬项目红利。")
         elif aid == "skeptic":
-            lines.append("  1. **事前验尸推演**：最可能导致项目失败的核心诱因通常是'未经检验的过度乐观假设'。")
+            lines.append("  1. **事前逆向排雷推演**：最可能导致项目搞砸的核心诱因通常是'未经检验的过度乐观假设'。")
             lines.append("  2. **脆弱性防护**：必须设定不可逾越的止损红线，防止陷入沉没成本陷阱。")
             lines.append("- **下行风险**：最坏情况下是否会导致核心业务中断或关键资产受损？必须有回滚兜底预案。")
         elif aid == "visionary":
