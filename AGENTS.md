@@ -24,13 +24,6 @@ Activate when users:
 4. **Tension Matrix**: Synthesize consensus, map root tradeoffs, and expose hidden blindspots.
 5. **Action Plan**: Provide recommendation, 72-hour probing experiment, and explicit kill criteria.
 
-## CLI Commands
-Run `python3 scripts/consult_perspectives.py` to generate reports:
-- Run `python3 scripts/consult_perspectives.py --topic "<topic>"`
-- Run `python3 scripts/consult_perspectives.py --domain tech --topic "<topic>"`
-- Run `python3 scripts/run_pipeline.py --input <input_file> --output <output_file>`
-- Run `python3 scripts/run_evals.py --rollout`
-
 ## Key Gotchas
 - **No Premature Compromise**: Never homogenize advisor voices in Round 1.
 - **Two-Way vs One-Way Doors**: Fast 72-hour experiments for two-way doors; rigorous pre-mortems for one-way doors.
